@@ -1,1 +1,58 @@
-<p>progress works!</p>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4>Progress Bar</h4>
+        <div class="progress m-t-20">
+          <div
+            class="progress-bar bg-info progress-bar-striped active"
+            role="progressbar"
+            aria-valuenow="85"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            style="height: 10px"
+            [style.width]="progressPercent1"
+          >
+            <span class="sr-only">{{ progressPercent1 }} Complete</span>
+          </div>
+        </div>
+
+        <div class="progress m-t-20">
+          <div
+            class="progress-bar bg-primary progress-bar-striped active"
+            role="progressbar"
+            aria-valuenow="85"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            style="height: 10px"
+            [style.width]="progressPercent2"
+          >
+            <span class="sr-only">{{ progressPercent2 }} Complete</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-incrementer
+          (progressChanged)="progressChanged1($event)"
+          [progress]="progress1"
+        ></app-incrementer>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <app-incrementer
+          (progressChanged)="progressChanged2($event)"
+          [progress]="progress2"
+        ></app-incrementer>
+      </div>
+    </div>
+  </div>
+</div>
